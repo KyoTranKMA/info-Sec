@@ -1,9 +1,17 @@
 const express = require('express');
+/* Challenge 1 */
+const helmet = require('helmet')
 const app = express();
 
+/* Challenge 2 */
+app.use(helmet.hidePoweredBy({ setTo: 'Kyo Server'}));
 
-
-
+/* Challenge 3 */
+app.use(helmet.frameguard({action: 'deny'}));
+/* Challenge 4 */
+app.use(helmet.xssFilter())
+/* Challenge 5 */
+app.use(helmet.noSniff())
 
 
 
