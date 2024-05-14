@@ -12,7 +12,8 @@ app.use(helmet.frameguard({action: 'deny'}));
 app.use(helmet.xssFilter())
 /* Challenge 5 */
 app.use(helmet.noSniff())
-
+/* CHallenge 6 */
+app.use(helmet.ieNoOpen())
 
 
 
