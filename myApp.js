@@ -14,7 +14,15 @@ app.use(helmet.xssFilter())
 app.use(helmet.noSniff())
 /* CHallenge 6 */
 app.use(helmet.ieNoOpen())
-
+/* Challenge 7 */
+const timeInSecond = 90 * 24 * 60 * 60 * 1000;
+app.use(helmet.hsts({maxAge: timeInSecond, force: true}))
+/* Challenge 8 */
+app.use(helmet.dnsPrefetchControl());
+/* Challenge 9 */
+app.use(helmet.noCache());
+/* Challenge 10 */
+app.use(helmet.contentSecurityPolicy({ directives: { defaultSrc: ["'self'"], scriptSrc: ["'self'", "trusted-cdn.com"] } }));
 
 
 
